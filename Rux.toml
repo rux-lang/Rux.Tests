@@ -1,0 +1,5 @@
+[Package]
+Name = "Rux.Lab"
+Version = "0.1.0"
+Authors = ["Ivan Muzyka <musicvano@mail.com>"]
+Description = "Rux package for development and testing"
