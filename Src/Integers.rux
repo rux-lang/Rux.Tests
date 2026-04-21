@@ -6,25 +6,27 @@ func Main() {
     var val3: int32 = 2147483647;
     var val4: int64 = 9223372036854775807;    
     // var val5: int128 = 170141183460469231731687303715884105727;
-    // var val6: int512 = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
+    // var val6: int256 = 57896044618658097711785492504343953926634992332820282019728792003956564819967; 
+    // var val7: int512 = 6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048;
 
     // Unsigned integers
-    var val7: uint8 = 255;
-    var val8: uint16 = 65535;
-    var val9: uint32 = 4294967295;
-    var val10: uint64 = 18446744073709551615;
-    // var val11: uint128 = 340282366920938463463374607431768211455;
-    // var val12: uint512 = 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084171;
+    var val8: uint8 = 255;
+    var val9: uint16 = 65535;
+    var val10: uint32 = 4294967295;
+    var val11: uint64 = 18446744073709551615;
+    // var val12: uint128 = 340282366920938463463374607431768211455;
+    // var val13: uint256 = 115792089237316195423570985008687907853269984665640564039457584007913129639935;
+    // var val14: uint512 = 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096;
 
     // Platform dependent types
-    var val13: int = 0;
-    var val14: uint = 0;
+    var val15: int = 0;
+    var val16: uint = 0;
 
     // Integer literals
-    var val15 = 123; // Default to int
-    var val16 = 0x007f; // Hexadecimal
-    var val17 = 0o173; // Octal
-    var val18 = 0b1111011; // Binary
+    var val17 = 123; // Default to int
+    var val18 = 0x007f; // Hexadecimal
+    var val19 = 0o173; // Octal
+    var val20 = 0b1111011; // Binary
 
     // Arithmetic operations
     var sum = val1 + val2; // Addition
@@ -47,7 +49,7 @@ func Main() {
     var rightShift = val1 >> 2; // Right shift
 
     //Type casting
-    var val19: int16 = val1 as int16; // Implicit widening (safe)
-    var val20: int8 = val4 as int8; // Explicit narrowing (may cause overflow)
-    var val21: int8 = val4 as! int8; // Explicit narrowing with overflow check (throws error if overflow occurs)
+    var val21: int16 = val1 as int16; // Implicit widening (safe)
+    var val22: int8 = val4 as int8; // Explicit narrowing (may cause overflow)
+    var val23: int8 = val4 as! int8; // Explicit narrowing with overflow check (throws error if overflow occurs)
 }
