@@ -1,39 +1,39 @@
-func Sin(x: float32): float32
+func Sin(x: float32) -> float32
 {
     return 0.0; // Placeholder implementation
 }
 
-func Cos(x: float32): float32
+func Cos(x: float32) -> float32
 {
     return 0.0; // Placeholder implementation
 }
 
-func Tan(x: float32): float32
+func Tan(x: float32) -> float32
 {
     return 0.0; // Placeholder implementation
 }
 
-func Sqrt(x: float32): float32
+func Sqrt(x: float32) -> float32
 {
     return 0.0; // Placeholder implementation
 }
 
-func Pow(base: float32, exponent: float32): float32
+func Pow(base: float32, exponent: float32) -> float32
 {
     return 0.0; // Placeholder implementation
 }
 
-func Abs(x: float32): float32
+func Abs(x: float32) -> float32
 {
     return 0.0; // Placeholder implementation
 }
 
-func Floor(x: float32): float32
+func Floor(x: float32) -> float32
 {
     return 0.0; // Placeholder implementation
 }
 
-func Ceil(x: float32): float32
+func Ceil(x: float32) -> float32
 {
     return 0.0; // Placeholder implementation
 }

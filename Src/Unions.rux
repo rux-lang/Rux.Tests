@@ -1,0 +1,7 @@
+union Bits {
+    asInt:   int32,
+    asFloat: float32,
+    asBytes: uint8[4]
+}
+
+type Word = Bits;

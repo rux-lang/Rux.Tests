@@ -1,7 +1,7 @@
 import System::Print;
 
 // This is the main entry point of the application.
-func Main(): int32
+func Main() -> int32
 {
     var a: int8 = 0b00100000;
     var b: int16 = 0x77;
@@ -20,15 +20,17 @@ func Main(): int32
     let d = 0.1 + 0.2; // This will not be exactly 0.3 due to floating-point precision.
     let e = 0.3;
 
-    if (d == e)
+    if d == e {
         Print("d and e are equal.");
-    else
+    } else {
         Print("d and e are not equal due to floating-point precision issues.");
+    }
 
     let hexValue: uint32 = 0xDEADBEEF;
     Print("Hex value: ", hexValue);
 
-    var ptr = @a; // Pointer to variable a
+    // Pointer to variable a
+    var ptr = @a; 
     var data: *int8 = ptr;
     Print("Value at pointer: ", *data);
 
