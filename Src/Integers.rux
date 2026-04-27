@@ -1,13 +1,13 @@
 // Integer prmitive types and operations in Rux
-func Main() -> int32 {
+func TestIntegers() -> int32 {
     // Signed integers
     var val1: int8 = 127;
     var val2: int16 = 32767;
     var val3: int32 = 2147483647;
     var val4: int64 = 9223372036854775807;    
-    // var val5: int128 = 170141183460469231731687303715884105727;
-    // var val6: int256 = 57896044618658097711785492504343953926634992332820282019728792003956564819967; 
-    // var val7: int512 = 6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048;
+    //var val5: int128 = 170141183460469231731687303715884105727;
+    //var val6: int256 = 57896044618658097711785492504343953926634992332820282019728792003956564819967; 
+    //var val7: int512 = 6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048;
 
     // Unsigned integers
     var val8: uint8 = 255;
@@ -19,8 +19,8 @@ func Main() -> int32 {
     // var val14: uint512 = 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096;
 
     // Platform dependent types
-    var val15: int = 0;
-    var val16: uint = 0;
+    // var val15: int = 0;
+    // var val16: uint = 0;
 
     // Integer literals
     var val17 = 123; // Default to int
@@ -31,7 +31,7 @@ func Main() -> int32 {
     // Arithmetic operations
     var sum = val1 + val2; // Addition
     var difference = val3 - val1; // Subtraction
-    var product = val1 * val7; // Multiplication
+    var product = val1 * val2; // Multiplication
     var quotient = val3 / val2; // Division
     var remainder = val3 % val2; // Modulo
     var negation = -val1; // Negation
@@ -39,9 +39,9 @@ func Main() -> int32 {
     var decrement = val1 - 1; // Decrement
 
     // Bitwise operations
-    var bitwiseAnd = val1 & val7; // Bitwise AND
-    var bitwiseOr = val1 | val7; // Bitwise OR
-    var bitwiseXor = val1 ^ val7; // Bitwise XOR
+    var bitwiseAnd = val2 & val9; // Bitwise AND
+    var bitwiseOr = val2 | val9; // Bitwise OR
+    var bitwiseXor = val2 ^ val9; // Bitwise XOR
     var bitwiseNot = ~val1; // Bitwise NOT
 
     // Shift operations
@@ -51,6 +51,6 @@ func Main() -> int32 {
     //Type casting
     var val21: int16 = val1 as int16; // Implicit widening (safe)
     var val22: int8 = val4 as int8; // Explicit narrowing (may cause overflow)
-    var val23: int8 = val4 as! int8; // Explicit narrowing with overflow check (throws error if overflow occurs)
+    //var val23: int8 = val4 as! int8; // Explicit narrowing with overflow check (throws error if overflow occurs)
     return 0;
 }

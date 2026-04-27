@@ -1,17 +1,17 @@
-func Main() -> int32 {
-    var ptr: *int32 = null;
-    ptr = GetData();
-    if ptr != null {
-        Console.WriteLine("Value: " + *ptr);
-    }
-    FreeData(ptr);
+func TestPointer() -> int32 {
+    // var ptr: *int32 = null;
+    // ptr = GetData();
+    // if ptr != null {
+    //     Console.WriteLine("Value: " + *ptr);
+    // }
+    // FreeData(ptr);
 
-    let strPtr: *char8 = GetString();
-    var c = 'R';
-    str = @c;
+    // let strPtr: *char8 = GetString();
+    // var c = 'R';
+    // str = @c;
 
-    const arr: *float32 = GetArray();
-    arr[0] = 1.0;    
+    // const arr: *float32 = GetArray();
+    // arr[0] = 1.0;    
 
     return 0;
 }

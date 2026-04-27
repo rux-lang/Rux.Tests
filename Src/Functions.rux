@@ -1,5 +1,5 @@
 func Greet() {
-    print("Hello, World!");
+    //print("Hello, World!");
 }
 
 func Add(a: float32, b: float32) -> float32 {
@@ -22,4 +22,4 @@ func Max<T>(a: T, b: T) -> T {
     }
 }
 
-type Handler = func(x, y: int32);
+//type Handler = func(x, y: int32);
