@@ -1,12 +1,12 @@
 # Rux Testing Packages
 
-Sandbox for development and testing Rux programming language. To build any of this packages use command in the corresponding folder.
+Sandbox for development and testing Rux programming language. To build any of these packages use command in the corresponding folder.
 
 ```sh
 rux build
 ```
 
-// Each package contans some program for testing types, variables, functions of the Rux programming language.
+// Each package contains some program for testing types, variables, functions of the Rux programming language.
 
 ```rux
 func Test() -> int32 {

@@ -1,38 +1,25 @@
-//import System::Print;
+import System::Print;
 
-// This is the main entry point of the application.
+/// Returns the minimum of two integers
+func Min(x: int32, y: int32) -> int32
+{
+    if x < y {
+        return x;
+    } else {
+        return y;
+    }
+}
+
+/// This is the main entry point of the application
 func Main() -> int32
 {
     var a: int8 = 0b00100000;
-    var b: int16 = 0x77;
-    var c: int32 = 0x00ff0000;
-    var d: int32 = 0x00ff0000i32;
-    var e: uint32 = 0x00FF0000u32;
-    //var f: int64 = -1i64;
-    var g: uint64 = 255;
-
-    let s = -1.025e-3;
-    //let t = 1.0e+6f32;
-
-    // const pi: f64 = 3.1415926535897932384626433832795;
-    // const euler: f32 = 2.71828; //f32;
-
-    // let d = 0.1 + 0.2; // This will not be exactly 0.3 due to floating-point precision.
-    // let e = 0.3;
-
-    // if d == e {
-    //     Print("d and e are equal.");
-    // } else {
-    //     Print("d and e are not equal due to floating-point precision issues.");
-    // }
-
-    // let hexValue: uint32 = 0xDEADBEEF;
-    // Print("Hex value: ", hexValue);
-
-    // Pointer to variable a
-    // var ptr = @a; 
-    // var data: *int8 = ptr;
-    // Print("Value at pointer: ", *data);
-
-    return 1 + 2 - 3;
+    var b: int32 = 0x00ff0000;
+    let pi: float32 = 3.14159265;
+    let e: float64 = 2.718281828459045;
+    let flag: bool = true;
+    let letter: char = 'R';
+    let message: string = "Hello, Rux!";
+    Print(message);
+    return 0;
 }
