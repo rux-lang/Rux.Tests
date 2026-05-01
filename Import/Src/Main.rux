@@ -1,89 +1,38 @@
-// We have a dynamic linked library, so we need to import/export a function for the linker to find.
+@[Link("Kernel32.dll")]
+extern {
+    func WriteConsoleA(
+        consoleOutput: *any,
+        buffer: *const char8,
+        numberOfCharsToWrite: uint32,
+        numberOfCharsWritten: *uint32,
+        reserved: *any) -> bool32;
 
-// Opt 1
-# extern "Math.dll", "Sin" 
-func Sin(x: float64) -> float64;
-
-// Opt 2
-# Extern(library: "Math.dll", function: "Sin")
-func Sin(x: float64) -> float64;
-
-// Opt 3
-#[Extern(library: "Math.dll", function: "Sin")]
-func Sin(x: float64) -> float64;
-
-// Opt 4
-#[Link(library: "Math.dll", function: "Sin")]
-func Sin(x: float64) -> float64;
-
-// Opt 5
-[[Link(library: "Math.dll", function: "Sin")]]
-func Sin(x: float64) -> float64;
-
-// Opt 6
-[Link(library: "Math.dll", function: "Sin")]
-func Sin(x: float64) -> float64;
-
-// Opt 7
-@Link(library: "Math.dll", function: "Sin")
-func Sin(x: float64) -> float64;
-
-// Opt 8
-[Library "Math.dll"]
-[Function "Sin")]
-func Sin(x: float64) -> float64;
-
-// Opt 9
-[Library("Math.dll")]
-[Function("Sin")]
-func Sin(x: float64) -> float64;
-
-// Opt 10
-library Math {
-    windows "Math.dll"
-    linux   "math.so"
-    macos   "math.dylib"
-
-    abi "c"
-    func Sin(x: float64) -> float64;
+    func WriteConsoleW(
+        consoleOutput: *,
+        buffer: *const char16,
+        numberOfCharsToWrite: uint32,
+        numberOfCharsWritten: *uint32,
+        reserved: *any) -> bool32;
 }
 
-// Best design
-library Math {
-    link {
-        windows: "Math.dll"
-        linux:   "libm.so.6"
-        macos:   "libm.dylib"
-    }
 
-    abi: "c"
-
+@[Call(Std)]
+@[Link("Math.dll")]
+extern {
     func Sin(x: float64) -> float64;
+
+    @[Symbol("Cosine")]
     func Cos(x: float64) -> float64;
-    func Sqrt(x: float64) -> float64;
+
+    @[Symbol("Tangent")]
+    func Tan(x: float64) -> float64;
+
+    @[Ordinal(25)]
+    func Log(x: float64) -> float64;
 }
 
-library Math("Math.dll") {
-    func Sin(x: float64) -> float64;
-    func Cos(x: float64) -> float64;
-}
 
-library Win32("user32.dll") {
-    abi: "stdcall"
-    func MessageBox = "MessageBoxA"(hwnd: *void, text: *char, caption: *char, flags: uint32) -> int32;
-}
 
-library Math {
-    link: {
-        windows: "math.dll",
-        linux: "libm.so",
-        macos: "libm.dylib"
-    },
-    abi: "stdcall",    
-    func Sin = "sine"(x: float64) -> float64;
-    func Cos = "cosine(x: float64) -> float64;
-    func Sqrt(x: float64) -> float64;
-}
 
 
 func Main() -> int32 {
