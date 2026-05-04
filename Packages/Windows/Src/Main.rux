@@ -1,11 +1,13 @@
 @[Import(lib: "Platform.dll")]
-extern {
+extern
+{
     func Exit(code: int32);
-
     func MemAlloc(size: uint) -> *opaque;
+    func MemRealloc(ptr: *opaque, size: uint) -> *opaque;
     func MemFree(ptr: *opaque);
+    func MemSet(ptr: *opaque, value: int, size: uint);
     func MemZero(ptr: *opaque, size: uint);
-
+    func MemCompare(lhs: *const opaque, rhs: *const opaque, count: uint) -> int32;
     func Print(slice: char8[]);
     func PrintLine(slice: char8[]);
     func PrintCString(string: *const char8, length: uint);
@@ -30,31 +32,8 @@ extern {
     func PrintSliceFloat64(format: char8[], slice: float64[]);
 }
 
-func Main() -> int32 {    
-    // PrintInt64(1234567890);
-    // PrintLn();
-    // PrintFloat64(3.141592653589793);
-    // PrintLn();    
-    // var str: char8[] = "Hello, World!";
-    // PrintStr(str, str.len);    
-    // PrintLn();
-    // var ptr: *opaque = MemAlloc(64); 
-    // PrintPtr(ptr);
-    // MemFree(ptr);
-    // PrintLn();
-
-    // var s : char8[] = "Hello, Rux!";
-    // var c: char8 = c8'#';
-    // PrintCString(&s[3], 4u64);
-
-    // var ptr: *opaque = MemAlloc(64u64);
-    // var val: *uint64 = ptr as *uint64;
-    // PrintUint64("Pointer value: {}\n", *val);
-    // PrintPointer("{}\n", ptr );
-    // PrintPointer("{}\n", ptr + 1 );
-    // PrintPointer("{}\n", ptr + 2 );
-    // PrintPointer("{}\n", ptr + 3 );
-
+func Main() -> int32
+{    
     var arr: int64[] = [1, 2, 3, 4, 5];
     PrintSliceInt64("Slice: {}\n", arr);
     PrintUint64("Slice length: {}\n", arr.length);
