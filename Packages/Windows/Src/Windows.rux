@@ -1,0 +1,5 @@
+// This package exports Windows API functions and data types
+// Package includes such modules:
+// Windows::Kernel32
+// Windows::User32
+// ...

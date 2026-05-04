@@ -2,7 +2,4 @@
 Name = "Print"
 Version = "0.1.0"
 Authors = ["Ivan Muzyka <musicvano@mail.com>"]
-Description = "Package for testing Rux compiler"
-
-[Build]
-Output = "../Bin"
+Description = "Windows API"

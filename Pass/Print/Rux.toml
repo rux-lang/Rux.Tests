@@ -5,4 +5,4 @@ Authors = ["Ivan Muzyka <musicvano@mail.com>"]
 Description = "Package for testing Rux compiler"
 
 [Build]
-Output = "../Bin"
+Output = "../../Bin"
