@@ -1,0 +1,7 @@
+[Package]
+Name = "Std"
+Version = "0.1.0"
+Type = "Source"
+Description = "Rux standard library"
+License = "MIT"
+Authors = ["Ivan Muzyka <musicvano@mail.com>"]

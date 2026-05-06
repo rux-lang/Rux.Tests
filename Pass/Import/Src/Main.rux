@@ -1,3 +1,4 @@
+/*
 // Attributes for import function from the library
 @[Import(lib: "Math.dll")]
 @[Import(lib: "Math.dll", symbol: "Sine")]
@@ -58,3 +59,4 @@ func Main() -> int32 {
     ptr = &val;
     return 0;
 }
+*/

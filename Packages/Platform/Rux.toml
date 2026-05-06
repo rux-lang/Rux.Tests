@@ -1,5 +1,0 @@
-[Package]
-Name = "Core"
-Version = "0.1.0"
-Authors = ["Ivan Muzyka <musicvano@mail.com>"]
-Description = "Standard library for Rux programming language"

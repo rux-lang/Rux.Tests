@@ -1,4 +1,4 @@
-// Integer prmitive types and operations in Rux
+// Integer primitive types and operations in Rux
 func Main() -> int32 {
     // Signed integers
     var val1: int8 = 127;

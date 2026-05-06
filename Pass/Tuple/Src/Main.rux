@@ -1,0 +1,35 @@
+import Std::Platform::*;
+
+func divide(a: int, b: int) -> (int, bool)
+{
+    if b == 0
+    {
+        return (0, false);
+    }
+    return (a / b, true);
+}
+
+func Main() -> int
+{
+    //let pair  = (1, 2); 
+    let pair: (int, float) = (1, 3.1415);
+    PrintInt64("pair.0 = {}\n", pair.0);
+    PrintFloat64("pair.1 = {}\n", pair.1);
+
+    let (x, y) = pair; // Destructuring assignment
+    PrintInt64("x = {}\n", x);
+    PrintFloat64("y = {}\n", y);
+
+    PrintInt64("Size of pair: {}\n", sizeof((int, float)) as int64);
+
+    let (result, ok) = divide(10, 0);
+    if ok
+    {
+        PrintInt64("10 / 2 = {}\n", result);
+    }
+    else
+    {
+        Print("Division by zero!\n");
+    }
+    return 0;
+}

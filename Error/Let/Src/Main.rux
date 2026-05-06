@@ -1,0 +1,6 @@
+func Main() -> int
+{
+    let b = 10;
+    b = 20; // This should be an error because 'b' is declared as a 'let' and cannot be reassigned.
+    return 0;
+}

@@ -1,6 +1,7 @@
 @[Import(lib: "Platform.dll")]
 extern
 {
+    /// Terminates the process with the given exit code
     func Exit(code: int32);
 
     /// Allocates size bytes of uninitialized memory

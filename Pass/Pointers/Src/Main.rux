@@ -1,21 +1,16 @@
-func TestPointer() -> int32 {
-    var ptr: *int32 = null;
-    ptr = GetData();
-    if ptr != null {
-        Console.WriteLine("Value: " + *ptr);
-    }
-    FreeData(ptr);
+import Std::Platform::PrintPointer;
 
-    let strPtr: *char8 = GetString();
-    var c = 'R';
-    str = @c;
-
-    const arr: *float32 = GetArray();
-    arr[0] = 1.0;    
-
-    return 0;
+struct Point
+{
+    x: float;
+    y: float;
+    z: float;
 }
 
-func Main() -> int32 {
+func Main() -> int
+{
+    var point = Point {x: 10.0, y: 20.0, z: 30.0};
+    var ptr = &point;
+    PrintPointer("Address of point = {}\n", ptr);
     return 0;
 }
