@@ -1,0 +1,6 @@
+func Main() -> int
+{
+    const Pi = 3.14;
+    Pi = 3.1415;  // This line will cause a compilation error because Pi is a constant
+    return 0;
+}
