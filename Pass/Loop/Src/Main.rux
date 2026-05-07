@@ -1,14 +1,11 @@
 import Std::Platform::PrintInt64;
 
-func Main() -> int
-{
+func Main() -> int {
     var i = 0;
-    loop
-    {        
+    loop {        
         PrintInt64("{}; ", i);
         ++i;
-        if i > 100
-        {
+        if i > 100 {
             break;
         }
     } 

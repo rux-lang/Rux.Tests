@@ -1,5 +1,4 @@
-func Main() -> int
-{
+func Main() -> int {
     var value = 10;
     value++;
     value = 20;

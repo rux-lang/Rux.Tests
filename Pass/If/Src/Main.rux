@@ -1,20 +1,14 @@
 import Std::Platform::PrintLine;
 
-func Main() -> int
-{
+func Main() -> int {
     var a = 100;
     var b = 200;
-    if a > b
-    {
+    if a > b {
         PrintLine("a is greater than b");
-    }
-    else if a == b
-    {
+    } else if a == b {
         PrintLine("a is equal to b");
-    }
-    else
-    {
+    } else {
         PrintLine("b is greater than a");
-    }  
+    }
     return 0;
 }

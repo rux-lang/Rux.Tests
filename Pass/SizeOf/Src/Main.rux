@@ -1,14 +1,12 @@
 import Std::Platform::PrintInt64;
 
-struct Point
-{
+struct Point {
     x: char8;
     y: float64;
     z: uint16;
 }
 
-func Main() -> int
-{
+func Main() -> int {
     var b: uint = sizeof(Point);
     PrintInt64("Size of Point: {} bytes\n", b as int64);
     return 0;

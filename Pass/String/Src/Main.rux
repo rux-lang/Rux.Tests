@@ -1,16 +1,9 @@
 import Std::String;
 import Std::Platform::*;
 
-// struct Slice<T> {
-//     data: *T;
-//     length: uint;
-// }
-
-
-
-
-func Main() -> int
-{
-    var str: String = String { data: null, length: 10 };
-    return str.Length();
+func Main() -> int {
+    var str = String::From("Hello, world!");
+    PrintPointer("{}\n", str.data);
+    PrintInt64("{}\n", str.length as int64);
+    return 0;
 }

@@ -1,8 +1,7 @@
-import Std::Memory::*;
-import Std::Platform::*;
+import Std::Memory::{ Alloc, Free };
+import Std::Platform::{ PrintPointer };
 
-func Main() -> int
-{
+func Main() -> int {
     var ptr = Alloc(10000000);
     PrintPointer("Pointer: {}\n", ptr);
     Free(ptr);

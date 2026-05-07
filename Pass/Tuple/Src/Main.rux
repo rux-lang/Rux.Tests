@@ -1,9 +1,7 @@
 import Std::Platform::*;
 
-func divide(a: int, b: int) -> (int, bool)
-{
-    if b == 0
-    {
+func divide(a: int, b: int) -> (int, bool) {
+    if b == 0 {
         return (0, false);
     }
     return (a / b, true);
@@ -23,12 +21,9 @@ func Main() -> int
     PrintInt64("Size of pair: {}\n", sizeof((int, float)) as int64);
 
     let (result, ok) = divide(10, 0);
-    if ok
-    {
+    if ok {
         PrintInt64("10 / 2 = {}\n", result);
-    }
-    else
-    {
+    } else {
         Print("Division by zero!\n");
     }
     return 0;

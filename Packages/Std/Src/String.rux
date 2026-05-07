@@ -1,0 +1,32 @@
+/*
+    Rux standard library
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
+module Std {
+    import Std::Memory::{ Alloc, Copy };
+
+    // Immutable UTF-8 string
+    struct String {
+        data: *char8;
+        length: uint;
+    }
+
+    impl String {
+        func From(slice: char8[]) -> String {
+            let len = slice.length;
+            let ptr = Alloc(len) as *char8;
+            Copy(ptr, slice.data, len);
+            return String { data: ptr, length: len };
+        }
+        
+        func Data(self) -> *char8 {
+            return self.data;
+        }
+
+        func Length(self) -> uint {
+            return self.length;
+        }
+    }
+}

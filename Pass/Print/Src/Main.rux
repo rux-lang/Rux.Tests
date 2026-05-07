@@ -1,7 +1,6 @@
 import Std::Platform::PrintLine;
 
-func Main() -> int
-{
+func Main() -> int {
     PrintLine("Hello, World!");
     return 0;
 }

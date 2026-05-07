@@ -6,10 +6,8 @@ import Std::Platform::PrintInt64;
 //     inclusive: bool8;
 // }
 
-func Main() -> int
-{
-    for i in 0..=10
-    {
+func Main() -> int {
+    for i in 0..=10 {
         PrintInt64("{}; ", i);
     }
     return 0;

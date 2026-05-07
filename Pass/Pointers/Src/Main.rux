@@ -1,14 +1,12 @@
 import Std::Platform::PrintPointer;
 
-struct Point
-{
+struct Point {
     x: float;
     y: float;
     z: float;
 }
 
-func Main() -> int
-{
+func Main() -> int {
     var point = Point {x: 10.0, y: 20.0, z: 30.0};
     var ptr = &point;
     PrintPointer("Address of point = {}\n", ptr);

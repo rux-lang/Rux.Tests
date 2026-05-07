@@ -1,29 +1,25 @@
-func TestBool()
-{
+func TestBool() {
     var val: bool = true;
     val = false;
     val = 10 > 5;
     val = 10 < 5;
 }
 
-func TestBool8()
-{
+func TestBool8() {
     var val: bool8 = true;
     val = false;
     val = 10 > 5;
     val = 10 < 5;
 }
 
-func TestBool16()
-{
+func TestBool16() {
     var val: bool16 = true;
     val = false;
     val = 10 > 5;
     val = 10 < 5;
 }
 
-func TestBool32()
-{
+func TestBool32() {
     var val: bool32 = true;
     val = false;
     val = 10 > 5;
@@ -31,8 +27,7 @@ func TestBool32()
 }
 
 
-func Main() -> int
-{
+func Main() -> int {
     let valA = 10 > 5;
     let valB = 10 < 5;
     let valC = 10 == 10;

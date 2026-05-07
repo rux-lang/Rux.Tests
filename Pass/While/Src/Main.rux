@@ -1,18 +1,12 @@
 import Std::Platform::PrintInt64;
 
-func Main() -> int
-{
-    var i = 0;
-    
-    do
-    {
+func Main() -> int {
+    var i = 0;    
+    do {
         PrintInt64("{}; ", i++);
     } while i < 50;
-
-    while i < 100
-    {
+    while i < 100 {
         PrintInt64("{}; ", i++);    
-    }    
-
+    }
     return 0;
 }

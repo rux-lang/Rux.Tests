@@ -1,5 +1,5 @@
 // Integer primitive types and operations in Rux
-func Main() -> int32 {
+func Main() -> int {
     // Signed integers
     var val1: int8 = 127;
     var val2: int16 = 32767;

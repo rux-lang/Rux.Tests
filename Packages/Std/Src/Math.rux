@@ -3,7 +3,7 @@
     Copyright © 2026 Ivan Muzyka
     Licensed under the MIT License
 */
-
+/*
 const PI: float64 = 3.14159265358979323846;
 const E: float64 = 2.71828182845904523536;
 
@@ -109,3 +109,4 @@ func Main() -> int32
 {
     return 0;
 }
+*/

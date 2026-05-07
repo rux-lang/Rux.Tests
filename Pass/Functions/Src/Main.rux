@@ -39,7 +39,7 @@
 // }
 
 
-func Main() -> int64 {
+func Main() -> int {
     // var console: *opaque = GetStdHandle(-11); // STD_OUTPUT_HANDLE
     // WriteConsoleA(console, "Hello, World!", 13, null, null);
     return 0;

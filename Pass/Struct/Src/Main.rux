@@ -1,9 +1,11 @@
 struct Point {
-    x: int32;
-    y: int32;
+    x: int;
+    y: int;
 }
 
-func Main() -> int32 {
+func Main() -> int {
     var p: Point = Point { x: 10, y: 20 };
-    return p.x;
+    var ptr: *Point = &p;
+    ptr.x = 30;
+    return ptr.x;
 }

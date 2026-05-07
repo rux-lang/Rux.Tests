@@ -6,6 +6,6 @@ union Bits {
 
 // type Word = Bits;
 
-func Main() -> int32 {
+func Main() -> int {
     return 0;
 }
