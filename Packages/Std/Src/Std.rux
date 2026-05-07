@@ -4,4 +4,17 @@
     Licensed under the MIT License
 */
 
+// Immutable UTF-8 string
+struct String
+{
+    data: *char8;
+    length: uint;
+}
 
+impl String
+{
+    func Length(self) -> uint
+    {
+        return self.length;
+    }
+}

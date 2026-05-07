@@ -1,13 +1,43 @@
+/*
+    Windows API bindings
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
 @[Import(lib: "kernel32.dll")]
 extern
 {
+    /// Retrieves a handle to the default heap of the calling process
+    /// https://learn.microsoft.com/en-us/windows/win32/api/heapapi/nf-heapapi-getprocessheap
+    func GetProcessHeap() -> *opaque;
+
+    /// Allocates a block of memory from a heap. The allocated memory is not movable
+    /// https://learn.microsoft.com/en-us/windows/win32/api/heapapi/nf-heapapi-heapalloc
+    func HeapAlloc(heap: *opaque, flags: uint32, bytes: uint) -> *opaque;
+
+    /// Reallocates a block of memory from a heap
+    /// https://learn.microsoft.com/en-us/windows/win32/api/heapapi/nf-heapapi-heaprealloc
+    func HeapReAlloc(heap: *opaque, flags: uint32, mem: *opaque, bytes: uint) -> *opaque;
+
+    /// Frees a memory block allocated from a heap by the HeapAlloc or HeapReAlloc function
+    /// https://learn.microsoft.com/en-us/windows/win32/api/heapapi/nf-heapapi-heapfree
+    func HeapFree(heap: *opaque, flags: uint32, mem: *opaque) -> bool32;
+
+    /// Fills a block of memory with the specified fill value
+    /// https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlfillmemory
+    func RtlFillMemory(destination: *opaque, length: uint, fill: int32);
+
+    /// Fills a block of memory with zeros, given a pointer to the block and the length in bytes
+    /// https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlzeromemory
+    func RtlZeroMemory(destination: *opaque, length: uint);
+
     // Allocates a new console for the calling process
     // https://learn.microsoft.com/en-us/windows/console/allocconsole
     func AllocConsole() -> bool32;
 
     // Generates simple tones on the speaker
     // https://learn.microsoft.com/en-us/windows/win32/api/utilapiset/nf-utilapiset-beep
-    func Beep(dwFreq: uint32, dwDuration: uint32) -> bool32;    
+    func Beep(freq: uint32, duration: uint32) -> bool32;    
 
     // Retrieves a handle to the specified standard device (standard input, standard output, or standard error)
     // https://learn.microsoft.com/en-us/windows/console/getstdhandle
@@ -34,4 +64,8 @@ extern
         numberOfCharsToWrite: uint32,
         numberOfCharsWritten: *uint32,
         reserved: *opaque) -> bool32;
+
+    /// Suspends the execution of the current thread until the time-out interval elapses
+    /// https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-sleep
+    func Sleep(milliseconds: uint32);
 }

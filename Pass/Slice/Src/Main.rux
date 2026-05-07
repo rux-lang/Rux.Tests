@@ -1,8 +1,3 @@
-struct Slice<T> {
-    data: *T;
-    length: uint;
-}
-
 func Main() -> int32 {
     var str: char8[] = "Hello, world!";
     return str.length;

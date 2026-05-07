@@ -5,3 +5,6 @@ Type = "Source"
 Description = "Rux standard library"
 License = "MIT"
 Authors = ["Ivan Muzyka <musicvano@mail.com>"]
+
+[Dependencies]
+Windows = { Path = "../Windows" }

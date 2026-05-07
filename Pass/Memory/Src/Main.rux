@@ -1,0 +1,10 @@
+import Std::Memory::*;
+import Std::Platform::*;
+
+func Main() -> int
+{
+    var ptr = Alloc(10000000);
+    PrintPointer("Pointer: {}\n", ptr);
+    Free(ptr);
+    return 0;
+}

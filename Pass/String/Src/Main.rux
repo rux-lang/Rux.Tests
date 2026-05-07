@@ -1,0 +1,16 @@
+import Std::String;
+import Std::Platform::*;
+
+// struct Slice<T> {
+//     data: *T;
+//     length: uint;
+// }
+
+
+
+
+func Main() -> int
+{
+    var str: String = String { data: null, length: 10 };
+    return str.Length();
+}
