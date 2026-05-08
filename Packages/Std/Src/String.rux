@@ -6,18 +6,48 @@
 
 module Std {
     import Std::Memory::{ Alloc, Copy };
+    import Std::Platform::{
+        PrintCString,
+        PrintPointer,
+        PrintInt8,
+        PrintInt16,
+        PrintInt32,
+        PrintInt64,
+        PrintUint8,
+        PrintUint16,
+        PrintUint32,
+        PrintUint64,
+        PrintFloat32,
+        PrintFloat64
+    };
 
     // Immutable UTF-8 string
     struct String {
         data: *char8;
         length: uint;
-    }
+    }   
 
-    impl String {
+    extend String {
         func From(slice: char8[]) -> String {
             let len = slice.length;
             let ptr = Alloc(len) as *char8;
             Copy(ptr, slice.data, len);
+            return String { data: ptr, length: len };
+        }
+
+        func +(self, other: String) -> String {
+            let len = self.length + other.length;
+            let ptr = Alloc(len) as *char8;
+            Copy(ptr, self.data, self.length);
+            Copy(ptr + self.length, other.data, other.length);
+            return String { data: ptr, length: len };
+        }
+
+        func +(self, slice: char8[]) -> String {
+            let len = self.length + slice.length;
+            let ptr = Alloc(len) as *char8;
+            Copy(ptr, self.data, self.length);
+            Copy(ptr + self.length, slice.data, slice.length);
             return String { data: ptr, length: len };
         }
         
@@ -28,5 +58,63 @@ module Std {
         func Length(self) -> uint {
             return self.length;
         }
+    }
+
+    func Print(str: String) {
+        PrintCString(str.data, str.length);
+    }
+
+    func Print(slice: char8[]) {
+        PrintCString(slice.data, slice.length);
+    }
+
+    func Print(format: char8[], pointer: *const opaque) {
+        PrintPointer(format, pointer);
+    }
+
+    func Print(format: char8[], value: int8) {
+        PrintInt8(format, value);
+    }
+
+    func Print(format: char8[], value: int16) {
+        PrintInt16(format, value);
+    }
+
+    func Print(format: char8[], value: int32) {
+        PrintInt32(format, value);
+    }
+
+    func Print(format: char8[], value: int64) {
+        PrintInt64(format, value);
+    }
+
+    func Print(format: char8[], value: uint8) {
+        PrintUint8(format, value);
+    }
+
+    func Print(format: char8[], value: uint16) {
+        PrintUint16(format, value);
+    }
+
+    func Print(format: char8[], value: uint32) {
+        PrintUint32(format, value);
+    }
+
+    func Print(format: char8[], value: uint64) {
+        PrintUint64(format, value);
+    }
+
+    func Print(format: char8[], value: float32) {
+        PrintFloat32(format, value);
+    }
+
+    func Print(format: char8[], value: float64) {
+        PrintFloat64(format, value);
+    }
+
+    // TODO: fix this to support formatting
+    func Print(format: char8[], value: bool8) {
+        let str = value ? "true" : "false";
+        PrintCString(str.data, str.length);
     }
 }

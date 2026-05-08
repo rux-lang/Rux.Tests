@@ -1,9 +1,14 @@
-import Std::String;
-import Std::Platform::*;
+import Std::{ String, Print };
+import Std::Math::{ Pi, E };
+import Std::Platform::{ PrintFloat32, PrintFloat64 };
 
 func Main() -> int {
-    var str = String::From("Hello, world!");
-    PrintPointer("{}\n", str.data);
-    PrintInt64("{}\n", str.length as int64);
+    var str1 = String::From("First line");
+    var str2 = String::From("Second line\n");
+    var str = str1 + " - middle - " + str2;
+    Print(str);
+    Print("Pi: {}\n", 3.14159265358979323846f64);
+    PrintFloat32("Pi as float32: {}\n", 3.14f32);
+    PrintFloat64("Pi as float64: {}\n", 3.14159265358979323846f64);
     return 0;
 }
