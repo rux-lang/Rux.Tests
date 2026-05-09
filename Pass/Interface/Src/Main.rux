@@ -1,0 +1,46 @@
+import Std::String;
+import Std::Io::Print;
+
+// interface Display {
+//     func ToString() -> String;
+// }
+
+// extend int64 : Display {
+//     func ToString(self) -> String {
+//         return String::From("12345");
+//     }
+// }
+
+// func Main() -> int {
+//     var value: Display = 100i64;
+//     Print("Data:{}\n", value.data);
+//     Print("VTable:{}\n", value.vtable);
+//     var str = value.ToString();
+//     Print(str);
+//     return 0;
+// }
+
+func ToString(value: uint64) -> String {
+    if value == 0 {
+        //return String::From("0");
+    }
+    var buf: char8[256];
+    var temp = value;
+    var index = buf.length - 1;
+    while temp > 0 {
+        buf[index] = (temp % 10 + c8'0') as char8;
+        index--;
+        temp /= 10;
+    }
+    return String::From(buf.data + index + 1, (buf.length - index - 1) as uint);
+} 
+
+func Main() -> int {
+    var value: uint64 = 1234567890;
+    var str = ToString(value);
+    Print(str);    
+    return 0;
+}
+
+
+

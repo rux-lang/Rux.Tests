@@ -1,19 +1,25 @@
 /*
-    Rux standard library
+    Immutable UTF-8 string
     Copyright © 2026 Ivan Muzyka
     Licensed under the MIT License
 */
 
 module Std {
     import Std::Memory::{ Alloc, Copy };
+    import Std::Io::Print;
 
-    // Immutable UTF-8 string
     struct String {
         data: *char8;
         length: uint;
     }   
 
     extend String {
+        func From(str: *const char8, length: uint) -> String {
+            let ptr = Alloc(length) as *char8;
+            Copy(ptr, str, length);
+            return String { data: ptr, length: length };
+        }
+
         func From(slice: char8[]) -> String {
             let len = slice.length;
             let ptr = Alloc(len) as *char8;

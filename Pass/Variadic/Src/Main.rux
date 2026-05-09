@@ -1,0 +1,17 @@
+import Std::Io::Print;
+
+func Sum(args: float...) -> float {
+    var sum: float = 0.0;
+    for val in args {
+        sum += val;
+    }
+    return sum;
+}
+
+
+func Main() -> int {
+    var res = Sum(1.5, 2.5, 3.0, 5.0);
+    Print("The sum is: {}\n", res);
+    return 0;
+}
+
