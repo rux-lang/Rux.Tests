@@ -1,46 +1,27 @@
-import Std::String;
+import Std::Format;
 import Std::Io::Print;
 
-// interface Display {
-//     func ToString() -> String;
-// }
-
-// extend int64 : Display {
-//     func ToString(self) -> String {
-//         return String::From("12345");
-//     }
-// }
-
-// func Main() -> int {
-//     var value: Display = 100i64;
-//     Print("Data:{}\n", value.data);
-//     Print("VTable:{}\n", value.vtable);
-//     var str = value.ToString();
-//     Print(str);
-//     return 0;
-// }
-
-func ToString(value: uint64) -> String {
-    if value == 0 {
-        //return String::From("0");
-    }
-    var buf: char8[256];
-    var temp = value;
-    var index = buf.length - 1;
-    while temp > 0 {
-        buf[index] = (temp % 10 + c8'0') as char8;
-        index--;
-        temp /= 10;
-    }
-    return String::From(buf.data + index + 1, (buf.length - index - 1) as uint);
-} 
-
-func Main() -> int {
-    var value: uint64 = 1234567890;
-    var str = ToString(value);
-    Print(str);    
-    return 0;
+interface Figure {
+    func Area() -> int;
 }
 
+struct Square {
+    size: int;
+}
 
+extend Square : Figure {
+    func Area(self) -> int {
+        return self.size * self.size;
+    }
+}
 
+func Main() -> int {
+    var square = Square { size: 5 };
+    var area = square.Area();
+    var text = Format("Area of the square with size {} is {}\n", square.size, area);
+    Print(text);
+
+    var fig : Figure = square;
+    Print(Format("Area of the figure is {}\n", fig.Area()));
+    return 0;
+}

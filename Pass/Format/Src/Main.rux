@@ -1,0 +1,8 @@
+import Std::Format;
+import Std::Io::Print;
+
+func Main() -> int {
+    let str = Format("✅ Integer: {}, 🔥 Float: {}", 255, 3.141592653589793);
+    Print(str);
+    return 0;
+}
