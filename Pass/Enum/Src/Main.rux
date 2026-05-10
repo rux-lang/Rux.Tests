@@ -1,4 +1,11 @@
+/*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
 import Std::Io::Print;
+import Std::ToString;
 
 enum Direction {
     North = 10,
@@ -31,6 +38,6 @@ func Main() -> int {
         Shape::Rect { width, height } => (width * height),
         Shape::Point => 0.0
     };
-    Print("{}\n", val as float64);
+    Print(ToString(val));
     return 0;
 }

@@ -1,4 +1,10 @@
 /*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
+/*
 // Attributes for import function from the library
 @[Import(lib: "Math.dll")]
 @[Import(lib: "Math.dll", symbol: "Sine")]

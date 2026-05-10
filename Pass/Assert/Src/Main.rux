@@ -4,11 +4,13 @@
     Licensed under the MIT License
 */
 
+import Std::Assert;
 import Std::Format;
 import Std::Io::Print;
 
 func Main() -> int {
-    let str = Format("✅ Integer: {}, 🔥 Float: {}", 255, 3.141592653589793);
-    Print(str);
+    var a = 10;
+    var b = 20;
+    Assert(a + b == 31, "integer addition");
     return 0;
 }

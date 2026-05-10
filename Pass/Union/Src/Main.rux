@@ -1,3 +1,9 @@
+/*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
 union Bits {
     asInt:   int32,
     asFloat: float32,
