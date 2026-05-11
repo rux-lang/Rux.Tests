@@ -4,14 +4,11 @@
     Licensed under the MIT License
 */
 
-union Bits {
-    asInt:   int32,
-    asFloat: float32,
-    asBytes: uint8[4]
-}
-
-// type Word = Bits;
+import Std::Format;
+import Std::Io::Print;
 
 func Main() -> int {
+    let str = Format("✅ Integer: {}, 🔥 Float: {}", 255, 3.141592653589793);
+    Print(str);
     return 0;
 }

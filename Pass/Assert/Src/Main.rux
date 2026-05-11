@@ -4,14 +4,13 @@
     Licensed under the MIT License
 */
 
-union Bits {
-    asInt:   int32,
-    asFloat: float32,
-    asBytes: uint8[4]
-}
-
-// type Word = Bits;
+import Std::Assert;
+import Std::Format;
+import Std::Io::Print;
 
 func Main() -> int {
+    var a = 10;
+    var b = 20;
+    Assert(a + b == 31, "integer addition");
     return 0;
 }

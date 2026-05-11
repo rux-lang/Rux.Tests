@@ -1,0 +1,43 @@
+/*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
+import Std::Io::Print;
+import Std::ToString;
+
+enum Direction {
+    North = 10,
+    South = 20,
+    East = 30,
+    West = 40
+}
+
+enum Color: uint8 {
+    Red = 0,
+    Green = 10,
+    Blue = 20
+}
+
+enum Option {
+    Some(int32),
+    None
+}
+
+enum Shape {
+    Circle { radius: float64; },
+    Rect { width: float64; height: float64; },
+    Point
+}
+
+func Main() -> int {
+    let shape = Shape::Rect { width: 10.0, height: 20.0 };
+    let val = match shape { 
+        Shape::Circle { radius } => radius,
+        Shape::Rect { width, height } => (width * height),
+        Shape::Point => 0.0
+    };
+    Print(ToString(val));
+    return 0;
+}

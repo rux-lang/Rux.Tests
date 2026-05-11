@@ -1,6 +1,15 @@
-import Std::Platform::PrintLine;
+/*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
+import Std::Io::Print;
+import Std::String;
 
 func Main() -> int {
-    PrintLine("Hello, World!");
+    Print("Hello, Rux!\n");
+    Print("{} + {} = {}\n", 10, 20, 30);
+    Print("{} + {} = {}\n", 1.5, 2.4, 3.9);
     return 0;
 }

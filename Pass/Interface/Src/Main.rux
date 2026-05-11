@@ -1,0 +1,32 @@
+/*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+import Std::Format;
+import Std::Io::Print;
+
+interface Figure {
+    func Area() -> int;
+}
+
+struct Square {
+    size: int;
+}
+
+extend Square : Figure {
+    func Area(self) -> int {
+        return self.size * self.size;
+    }
+}
+
+func Main() -> int {
+    var square = Square { size: 5 };
+    var area = square.Area();
+    var text = Format("Area of the square with size {} is {}\n", square.size, area);
+    Print(text);
+
+    var fig : Figure = square;
+    Print(Format("Area of the figure is {}\n", fig.Area()));
+    return 0;
+}

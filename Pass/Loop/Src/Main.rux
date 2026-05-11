@@ -1,3 +1,9 @@
+/*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
 import Std::Platform::PrintInt64;
 
 func Main() -> int {

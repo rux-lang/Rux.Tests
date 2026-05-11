@@ -1,0 +1,22 @@
+/*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
+import Std::Fatal;
+import Std::Format;
+import Std::Io::Print;
+
+func Div(a: uint, b: uint) -> uint {
+    if (b == 0) {
+        Fatal("division by zero");
+    }
+    return a / b;
+}
+
+func Main() -> int {
+    var result = Div(10, 0);
+    Print(Format("Result = {}\n", result));
+    return 0;
+}

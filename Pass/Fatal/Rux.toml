@@ -1,7 +1,6 @@
 [Package]
-Name = "Print"
+Name = "Fatal"
 Version = "0.1.0"
-Type = "Executable"
 Authors = ["Ivan Muzyka <musicvano@mail.com>"]
 Description = "Package for testing Rux compiler"
 

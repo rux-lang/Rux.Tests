@@ -1,0 +1,27 @@
+/*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
+import Std::Io::Print;
+import Std::Format;
+
+func Sum(args: float...) -> float {
+    var sum: float = 0.0;
+    for val in args {
+        sum += val;
+    }
+    return sum;
+}
+
+func Calc(args: float...) -> float {
+    return Sum(args...);
+}
+
+func Main() -> int {
+    var res = Calc(1.5, 2.5, 3.0, 5.0);
+    Print(Format("The sum is: {}", res));
+    return 0;
+}
+

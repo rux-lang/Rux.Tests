@@ -1,3 +1,9 @@
+/*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
 // This is the main entry point of the application.
 func Main() -> int {
     var a: int8 = 0b00100000;

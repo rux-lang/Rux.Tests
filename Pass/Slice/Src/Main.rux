@@ -1,3 +1,9 @@
+/*
+    Compiler correctness test
+    Copyright © 2026 Ivan Muzyka
+    Licensed under the MIT License
+*/
+
 func Main() -> int {
     var str: char8[] = "Hello, world!";
     return str.length;
