@@ -7,9 +7,13 @@
 import Std::Io::Print;
 import Std::String;
 
+func Add(a: float, b: float) -> float {
+    return a + b;
+}
+
 func Main() -> int {
     Print("Hello, Rux!\n");
-    Print("{} + {} = {}\n", 10, 20, 30);
-    Print("{} + {} = {}\n", 1.5, 2.4, 3.9);
+    Print("{} + {} = {}\n", 10, 20, 10 + 20);
+    Print("{} + {} = {}\n", 1.5, 2.4, Add(1.5, 2.4));
     return 0;
 }
